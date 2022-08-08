@@ -1,8 +1,8 @@
 const submitMeme = document.querySelector('#memeForm');
 const picStorage = document.querySelector('#pic-storage');
-const imgStored =  JSON.parse(localStorage.getItem('imageInfo')) || [];
+const imgStored = JSON.parse(localStorage.getItem('imageInfo')) || [];
 
-for(let x = 0; x < imgStored.length; x++){
+for (let x = 0; x < imgStored.length; x++) {
     const imageUrl = document.querySelector('#url');
     const topText = document.querySelector('#topText');
     const bottomText = document.querySelector('#bottomText');
@@ -20,7 +20,7 @@ for(let x = 0; x < imgStored.length; x++){
     picStorage.appendChild(containerDiv);
 }
 
-submitMeme.addEventListener('submit', function(event){
+submitMeme.addEventListener('submit', function (event) {
     event.preventDefault();
     const imageUrl = document.querySelector('#url');
     const topText = document.querySelector('#topText');
@@ -38,25 +38,26 @@ submitMeme.addEventListener('submit', function(event){
     containerDiv.append(newMeme, topTextDiv, bottomTextDiv);
     picStorage.appendChild(containerDiv);
 
-    imgStored.push({url: imageUrl.value, topText: topText.value, bottomText: bottomText.value});
+    imgStored.push({ url: imageUrl.value, topText: topText.value, bottomText: bottomText.value });
     localStorage.setItem('imageInfo', JSON.stringify(imgStored));
 
     submitMeme.reset();
 })
 
-picStorage.addEventListener('click', function(event){
-    
+picStorage.addEventListener('click', function (event) {
+
     let imageText = event.target.src;
-    const imgStored =  JSON.parse(localStorage.getItem('imageInfo')) || [];
-    for(let x = 0; x < imgStored.length; x++){
-        if( imgStored[x].url === imageText){
+    const imgStored = JSON.parse(localStorage.getItem('imageInfo')) || [];
+    for (let x = 0; x < imgStored.length; x++) {
+        if (imgStored[x].url === imageText) {
             imgStored.splice(x, 1);
         }
     }
     localStorage.setItem('imageInfo', JSON.stringify(imgStored));
 
-    if(event.target.tagName == 'IMG'){ 
+    if (event.target.tagName == 'IMG') {
         event.target.parentElement.remove();
     }
 
 })
+//commit
