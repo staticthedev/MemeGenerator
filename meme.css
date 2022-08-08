@@ -1,0 +1,74 @@
+body {
+    background-color: black;
+    color : white;
+}
+
+h1 {
+    text-align: center;
+    padding: 8px;
+    margin: 5px; 
+}
+
+#formContainer {
+    position: relative;
+    width:100%;
+    height:10em;
+    margin-bottom: 20px;
+}
+
+form {
+    position: absolute;
+    top: 50%;
+    left: 45%;
+    transform: translate(-50%,-50%);
+}
+
+input {
+    width: 200%;
+    box-sizing: border-box;
+    padding: 8px;
+    margin: 5px;   
+}
+
+
+button {
+    padding: 5px;
+    margin: 5px;
+}
+
+#pic-storage {
+    color: white;
+    display: inline-block;
+}
+
+.container {
+    position: relative;
+    font-family: Impact, sans-serif;
+    font-size: 60px;
+    text-transform: uppercase;
+    text-shadow: 2px 2px black;
+    display: inline-block;
+    padding: 5px;
+   
+}
+
+.top-text {
+    position: absolute;
+    top: 5%;
+    right: 50%;
+}
+
+.bottom-text {
+    position: absolute;
+    bottom: 5%;
+    right: 50%;
+    
+}
+
+.container:hover {
+    filter: blur(5px);    
+}
+
+img {
+    display: block;  
+}
