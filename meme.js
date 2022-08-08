@@ -60,4 +60,3 @@ picStorage.addEventListener('click', function (event) {
     }
 
 })
-//commit
